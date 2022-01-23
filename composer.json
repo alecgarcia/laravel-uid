@@ -34,7 +34,7 @@
                 "Alecgarcia\\LaravelUid\\LaravelUidServiceProvider"
             ],
             "aliases": {
-                "LaravelUid": "Alecgarcia\\LaravelUid\\Facades\\LaravelUid"
+                "LaravelUid": "Uid"
             }
         }
     }

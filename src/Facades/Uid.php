@@ -4,7 +4,7 @@ namespace Alecgarcia\LaravelUid\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class LaravelUid extends Facade
+class Uid extends Facade
 {
     /**
      * Get the registered name of the component.
@@ -13,6 +13,6 @@ class LaravelUid extends Facade
      */
     protected static function getFacadeAccessor(): string
     {
-        return 'laravel-uid';
+        return 'uid';
     }
 }

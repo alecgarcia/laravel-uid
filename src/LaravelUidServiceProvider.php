@@ -34,8 +34,8 @@ class LaravelUidServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__.'/../config/laravel-uid.php', 'laravel-uid');
 
         // Register the service the package provides.
-        $this->app->singleton('laravel-uid', function ($app) {
-            return new LaravelUid;
+        $this->app->singleton('uid', function ($app) {
+            return new Uid;
         });
     }
 
@@ -46,7 +46,7 @@ class LaravelUidServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return ['laravel-uid'];
+        return ['uid'];
     }
 
     /**

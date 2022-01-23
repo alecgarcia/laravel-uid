@@ -2,12 +2,12 @@
 
 namespace Alecgarcia\LaravelUid;
 
-class LaravelUid
+class Uid
 {
     const ALPHA_NUM = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-    // LarvelUid::make
-    // LaravelUid::check
+    // Uid::makeR
+    // Uid::check
 
     /**
      * @param  string|null  $prefix
