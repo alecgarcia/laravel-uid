@@ -2,6 +2,7 @@
 
 namespace Tests;
 
+use Tests\TestCase;
 use Alecgarcia\LaravelUid\Uid;
 
 class LaravelUidTest extends TestCase

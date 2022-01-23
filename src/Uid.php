@@ -32,4 +32,21 @@ class Uid
 
         return $uid;
     }
+
+    /**
+     * @param  string|null  $prefix
+     * @param  int  $length
+     * @param  bool  $checkIfExists
+     * @param  null  $model
+     *
+     * @return string
+     */
+    public static function makeForModel(string $prefix = null, int $length = 16, bool $checkIfExists = false, $model = null) : string
+    {
+        do {
+            $uid = self::make($prefix, $length);
+        } while ($checkIfExists && $model::findByUid($uid));
+
+        return $uid;
+    }
 }
