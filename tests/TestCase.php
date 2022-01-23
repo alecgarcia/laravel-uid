@@ -6,10 +6,10 @@ use Carbon\Carbon;
 use Illuminate\Database\Capsule\Manager as DB;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Schema\Blueprint;
-use PHPUnit\Framework\TestCase as Base;
+use Orchestra\Testbench\TestCase;
 use Tests\Models\User;
 
-abstract class TestCase extends Base
+abstract class TestBase extends TestCase
 {
     protected function setUp(): void
     {
