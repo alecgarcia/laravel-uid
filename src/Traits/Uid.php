@@ -2,6 +2,7 @@
 
 namespace Alecgarcia\LaravelUid\Traits;
 
+use Illuminate\Support\Str;
 use Alecgarcia\LaravelUid\Uid as LaravelUid;
 
 trait Uid
@@ -16,7 +17,7 @@ trait Uid
         parent::boot();
 
         static::creating(function ($query) {
-            $query->uid = LaravelUid::makeForModel(self::uidPrefix(), self::uidLength(), self::uidCheck(), self::uidModel());
+            $query->uid = LaravelUid::makeForModel(self::uidPrefix(), self::uidLength(), self::uidCheck(), self::class);
         });
     }
 
@@ -27,7 +28,7 @@ trait Uid
      */
     protected static function uidPrefix()
     {
-        return isset(self::$uidPrefix) ? self::$uidPrefix : null;
+        return self::$uidPrefix ?? Str::lower(class_basename(self::class));
     }
 
     /**
@@ -37,7 +38,7 @@ trait Uid
      */
     protected static function uidLength()
     {
-        return isset(self::$uidLength) ? self::$uidLength : 16;
+        return self::$uidLength ?? 16;
     }
 
     /**
@@ -47,17 +48,7 @@ trait Uid
      */
     protected static function uidCheck()
     {
-        return isset(self::$uidCheck) ? self::$uidCheck : true;
-    }
-
-    /**
-     * Check to see if a different model has been set to check
-     *
-     * @return class
-     */
-    protected static function uidModel()
-    {
-        return isset(self::$uidModel) ? self::$uidModel : self::class;
+        return self::$uidCheck ?? true;
     }
 
     /**

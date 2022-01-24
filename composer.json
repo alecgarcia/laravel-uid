@@ -25,7 +25,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Alecgarcia\\LaravelUid\\Tests\\": "tests"
+            "Tests\\": "tests/"
         }
     },
     "extra": {

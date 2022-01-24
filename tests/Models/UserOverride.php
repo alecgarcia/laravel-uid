@@ -4,7 +4,7 @@ namespace Tests\Models;
 
 use Alecgarcia\LaravelUid\Traits\Uid;
 
-class User extends Model
+class UserOverride extends Model
 {
     use Uid;
 
@@ -16,4 +16,8 @@ class User extends Model
     protected $fillable = [
         'name',
     ];
+
+    public static string $uidPrefix = 'usr';
+    public static int $uidLength = 10;
+    public static bool $uidCheck = false;
 }
