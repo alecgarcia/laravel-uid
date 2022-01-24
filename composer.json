@@ -1,6 +1,6 @@
 {
     "name": "alecgarcia/laravel-uid",
-    "description": ":package_description",
+    "description": "Create UIDs like the ones Stripe generates. These can be used on your models or on their own.",
     "license": "MIT",
     "authors": [
         {
