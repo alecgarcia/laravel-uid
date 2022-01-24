@@ -1,8 +1,5 @@
 # LaravelUid
-
-[![Latest Version on Packagist][ico-version]][link-packagist]
-[![Total Downloads][ico-downloads]][link-downloads]
-[![Build][ico-build]][link-build]
+[![Latest Stable Version](http://poser.pugx.org/alecgarcia/laravel-uid/v)](https://packagist.org/packages/alecgarcia/laravel-uid) [![Total Downloads](http://poser.pugx.org/alecgarcia/laravel-uid/downloads)](https://packagist.org/packages/alecgarcia/laravel-uid) [![License](http://poser.pugx.org/alecgarcia/laravel-uid/license)](https://packagist.org/packages/alecgarcia/laravel-uid) 
 
 This package creates UIDs like the ones Stripe uses for your models or on their own.
 
@@ -160,13 +157,6 @@ License
 
 MIT. Please see the [license file](license.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/alecgarcia/laravel-uid.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/alecgarcia/laravel-uid.svg?style=flat-square
-[ico-build]: https://github.com/alecgarcia/laravel-uid/actions/workflows/build.yml/badge.svg
-
-[link-packagist]: https://packagist.org/packages/alecgarcia/laravel-uid
-[link-downloads]: https://packagist.org/packages/alecgarcia/laravel-uid
-[link-build]: https://github.com/alecgarcia/laravel-uid/actions/workflows/build.yml
 [link-author]: https://github.com/alecgarcia
 [link-contributors]: ../../contributors
 [link-influencedby]: https://github.com/dpods/laravel-uid
