@@ -30,28 +30,28 @@ php artisan make:migration --table users add-uid-to-users
 2. Open up the migration file you just created and add a `uid` field
 ```bash
     /**
-         * Run the migrations.
-         *
-         * @return void
-         */
-        public function up()
-        {
-            Schema::table('users', function (Blueprint $table) {
-                $table->string('uid', 32)->after('id')->unique();
-            });
-        }
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('uid', 32)->after('id')->unique();
+        });
+    }
     
-        /**
-         * Reverse the migrations.
-         *
-         * @return void
-         */
-        public function down()
-        {
-            Schema::table('users', function (Blueprint $table) {
-                $table->dropColumn('uid');
-            });
-        }
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('uid');
+        });
+    }
 ```
 
 #### With aa new Model
