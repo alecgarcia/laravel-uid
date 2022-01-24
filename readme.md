@@ -88,7 +88,8 @@ class User extends Model
 }
 ```
 
-## To used statically
+To used statically
+------------------
 ```bash
 <?php
 
