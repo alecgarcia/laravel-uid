@@ -1,5 +1,8 @@
 # LaravelUid
-[![Latest Stable Version](http://poser.pugx.org/alecgarcia/laravel-uid/v)](https://packagist.org/packages/alecgarcia/laravel-uid) [![Total Downloads](http://poser.pugx.org/alecgarcia/laravel-uid/downloads)](https://packagist.org/packages/alecgarcia/laravel-uid) [![License](http://poser.pugx.org/alecgarcia/laravel-uid/license)](https://packagist.org/packages/alecgarcia/laravel-uid) 
+[![Latest Stable Version](http://poser.pugx.org/alecgarcia/laravel-uid/v)](https://packagist.org/packages/alecgarcia/laravel-uid)
+[![Total Downloads](http://poser.pugx.org/alecgarcia/laravel-uid/downloads)](https://packagist.org/packages/alecgarcia/laravel-uid)
+[![License](http://poser.pugx.org/alecgarcia/laravel-uid/license)](https://packagist.org/packages/alecgarcia/laravel-uid)
+[![Dependents](http://poser.pugx.org/alecgarcia/laravel-uid/dependents)](https://packagist.org/packages/alecgarcia/laravel-uid)
 
 This package creates UIDs like the ones Stripe uses for your models or on their own.
 
