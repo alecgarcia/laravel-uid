@@ -12,11 +12,11 @@
     "homepage": "https://github.com/alecgarcia/laravel-uid",
     "keywords": ["Laravel", "LaravelUid", "Uid"],
     "require": {
-        "illuminate/support": "~7|~8"
     },
     "require-dev": {
         "phpunit/phpunit": "~9.0",
-        "orchestra/testbench": "^6.24"
+        "orchestra/testbench": "^6.24",
+        "illuminate/support": "~7|~8"
     },
     "autoload": {
         "psr-4": {
