@@ -41,6 +41,16 @@ class LaravelUidTest extends TestCase
         $this->assertEquals(17, strlen($uid));
     }
 
+
+    /** @test */
+    public function can_change_characters_in_config()
+    {
+        config(['laravel-uid.characters' => '0']);
+        $uid = Uid::make('test');
+
+        $this->assertEquals('test_00000000000', $uid);
+    }
+
     /** @test */
     public function uid_is_created_with_model_trait()
     {

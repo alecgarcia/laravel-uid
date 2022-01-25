@@ -4,7 +4,7 @@ namespace Alecgarcia\LaravelUid;
 
 class Uid
 {
-    const ALPHA_NUM = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const CHARACTERS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
     /**
      * @param  string|null  $prefix
@@ -14,6 +14,7 @@ class Uid
      */
     public static function make(string $prefix = null, int $length = 16) : string
     {
+        $characters = config('laravel-uid.characters', self::CHARACTERS);
         $uid = '';
 
         if ($prefix && strlen($prefix) > 0) {
@@ -23,8 +24,8 @@ class Uid
         $prefixLength = strlen($uid);
 
         for ($i = 0; $i < ($length - $prefixLength); $i++) {
-            $index = mt_rand() % strlen(self::ALPHA_NUM);
-            $uid .= substr(self::ALPHA_NUM, $index, 1);
+            $index = mt_rand() % strlen($characters);
+            $uid .= substr($characters, $index, 1);
         }
 
         return $uid;
