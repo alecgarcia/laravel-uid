@@ -6,9 +6,6 @@ class Uid
 {
     const ALPHA_NUM = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-    // Uid::makeR
-    // Uid::check
-
     /**
      * @param  string|null  $prefix
      * @param  int  $length
