@@ -41,7 +41,6 @@ class LaravelUidTest extends TestCase
         $this->assertEquals(17, strlen($uid));
     }
 
-
     /** @test */
     public function can_change_characters_in_config()
     {
@@ -49,6 +48,15 @@ class LaravelUidTest extends TestCase
         $uid = Uid::make('test');
 
         $this->assertEquals('test_00000000000', $uid);
+    }
+
+    /** @test */
+    public function can_change_prefix_separator_in_config()
+    {
+        config(['laravel-uid.prefix_separator' => '-']);
+        $uid = Uid::make('test');
+
+        $this->assertStringContainsString('-', $uid);
     }
 
     /** @test */

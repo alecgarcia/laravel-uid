@@ -18,7 +18,7 @@ class Uid
         $uid = '';
 
         if ($prefix && strlen($prefix) > 0) {
-            $uid = $prefix . '_';
+            $uid = $prefix . config('laravel-uid.prefix_separator', '_');
         }
 
         $prefixLength = strlen($uid);
