@@ -27,7 +27,8 @@ Usage
 php artisan make:migration --table users add-uid-to-users
 ```
 
-2. Open up the migration file you just created and add a `uid` field
+2. Open up the migration file you just created and add a `uid` field.
+   1. If you overrode the column name in either the config for the default or in your model, make sure you create the column in your table to match.
 ```bash
     /**
      * Run the migrations.
@@ -56,6 +57,7 @@ php artisan make:migration --table users add-uid-to-users
 
 #### With aa new Model
 1. Open up the migration file for the model and add a `uid` field
+   1. If you overrode the column name in either the config for the default or in your model, make sure you create the column in your table to match.
 
 ```bash
     /**
@@ -106,7 +108,9 @@ Customization
 =============
 
 ### Using the trait
-You can add the following properties to your model to configure the Uid trait
+You can add the following properties to your model to configure the Uid trait.
+
+- This will override the defaults as well as the config file.
 
 ```bash
 <?php
@@ -123,7 +127,31 @@ class User extends Model
     public static string $uidPrefix = 'usr';  // Defaults to models class name
     public static int $uidLength = 10;        // Defaults to 16 total characters
     public static bool $uidCheck = false;     // Default is true
+    public static string $uidColumn = 'uidCustomColumn'; // Default is uid
 }
+```
+
+### Using the config file for defaults
+1. Publish the config file.
+```bash
+$ php artisan vendor:publish --tag laravel-uid.config
+```
+2. Customize the defaults in the `app/config/laravel-uid.php` file.
+```bash
+<?php
+
+return [
+    /*
+    |--------------------------------------------------------------------------
+    | Customize how the uid is created and used
+    |--------------------------------------------------------------------------
+    */
+    'characters' => '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
+    'prefix_separator' => '_',
+    'uid_column' => 'uid',
+    'length' => 16,
+    'check' => true,
+];
 ```
 
 Change log
@@ -158,8 +186,8 @@ Credits
 License
 =======
 
-MIT. Please see the [license file](license.md) for more information.
+MIT. Please see the [license file](LICENSE) for more information.
 
 [link-author]: https://github.com/alecgarcia
-[link-contributors]: ../../contributors
+[link-contributors]: https://github.com/alecgarcia/laravel-uid/graphs/contributors
 [link-influencedby]: https://github.com/dpods/laravel-uid
