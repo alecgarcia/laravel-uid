@@ -8,13 +8,14 @@ class Uid
 
     /**
      * @param  string|null  $prefix
-     * @param  int  $length
+     * @param  int|null  $length
      *
      * @return string
      */
-    public static function make(string $prefix = null, int $length = 16) : string
+    public static function make(string $prefix = null, int $length = null) : string
     {
         $characters = config('laravel-uid.characters', self::CHARACTERS);
+        $length = !is_null($length) ? $length : config('laravel-uid.length', 16);
         $uid = '';
 
         if ($prefix && strlen($prefix) > 0) {

@@ -8,7 +8,8 @@ return [
     */
     'characters' => '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
     'prefix_separator' => '_',
-    'uid_column' => 'uid',
     'length' => 16,
+    // Used with the Models Trait
+    'uid_column' => 'uid',
     'check' => true,
 ];
