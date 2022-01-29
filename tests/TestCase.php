@@ -33,5 +33,17 @@ abstract class TestCase extends Base
             $table->string('uid', 32)->unique();
             $table->string('name');
         });
+
+        DB::schema()->create('user_override_columns', function (Blueprint $table) {
+            $table->id();
+            $table->string('uidCustomColumn', 32)->unique();
+            $table->string('name');
+        });
+
+        DB::schema()->create('user_override_column_configs', function (Blueprint $table) {
+            $table->id();
+            $table->string('uidCustomConfig', 32)->unique();
+            $table->string('name');
+        });
     }
 }

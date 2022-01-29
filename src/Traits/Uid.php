@@ -17,7 +17,7 @@ trait Uid
         parent::boot();
 
         static::creating(function ($query) {
-            $query->uid = LaravelUid::makeForModel(self::uidPrefix(), self::uidLength(), self::uidCheck(), self::class);
+            $query->{self::uidColumn()} = LaravelUid::makeForModel(self::uidPrefix(), self::uidLength(), self::uidCheck(), self::class);
         });
     }
 
@@ -38,7 +38,7 @@ trait Uid
      */
     protected static function uidLength()
     {
-        return self::$uidLength ?? 16;
+        return self::$uidLength ?? config('laravel-uid.length', 16);
     }
 
     /**
@@ -48,7 +48,17 @@ trait Uid
      */
     protected static function uidCheck()
     {
-        return self::$uidCheck ?? true;
+        return self::$uidCheck ?? config('laravel-uid.check', true);
+    }
+
+    /**
+     * Check to see if prefix has been set for the uid
+     *
+     * @return null
+     */
+    protected static function uidColumn()
+    {
+        return self::$uidColumn ?? config('laravel-uid.uid_column', 'uid');
     }
 
     /**
@@ -57,6 +67,6 @@ trait Uid
      */
     public static function findByUid($uid)
     {
-        return static::where('uid', '=', $uid)->get()->first();
+        return static::where(self::uidColumn(), '=', $uid)->get()->first();
     }
 }
