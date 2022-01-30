@@ -59,6 +59,17 @@ class LaravelUidTest extends TestCase
     }
 
     /** @test */
+    public function uid_can_have_a_different_separator()
+    {
+        $uid = Uid::make('prefix', 17, '-');
+        $this->assertStringContainsString(
+            'prefix-',
+            $uid,
+            'Error: The prefix separator was not able to be change on the main make function.'
+        );
+    }
+
+    /** @test */
     public function can_change_characters_in_config()
     {
         config(['laravel-uid.characters' => '0']);
@@ -133,7 +144,7 @@ class LaravelUidTest extends TestCase
     public function uid_trait_prefix_can_be_changed()
     {
         $this->assertStringContainsString(
-            'usr_',
+            'usr',
             UserOverride::create(['name' => 'First Last'])->uid,
             'Error: The prefix was not be able to be changed using the override in the trait.'
         );
@@ -146,6 +157,16 @@ class LaravelUidTest extends TestCase
             10,
             strlen(UserOverride::create(['name' => 'First Last'])->uid),
             'Error: The length was not be able to be changed using the override in the trait.'
+        );
+    }
+
+    /** @test */
+    public function uid_trait_prefix_separator_can_be_changed()
+    {
+        $this->assertStringContainsString(
+            'usr=',
+            UserOverride::create(['name' => 'First Last'])->uid,
+            'Error: The prefix was not be able to be changed using the override in the trait.'
         );
     }
 

@@ -17,7 +17,13 @@ trait Uid
         parent::boot();
 
         static::creating(function ($query) {
-            $query->{self::uidColumn()} = LaravelUid::makeForModel(self::uidPrefix(), self::uidLength(), self::uidCheck(), self::class);
+            $query->{self::uidColumn()} = LaravelUid::makeForModel(
+                self::uidPrefix(),
+                self::uidLength(),
+                self::uidPrefixSeparator(),
+                self::uidCheck(),
+                self::class
+            );
         });
     }
 
@@ -29,6 +35,16 @@ trait Uid
     protected static function uidPrefix()
     {
         return self::$uidPrefix ?? Str::lower(class_basename(self::class));
+    }
+
+    /**
+     * Check to see if prefix separator has been set for the uid
+     *
+     * @return int
+     */
+    protected static function uidPrefixSeparator()
+    {
+        return self::$uidPrefixSeparator ?? config('laravel-uid.prefix_separator', '_');
     }
 
     /**

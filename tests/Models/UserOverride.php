@@ -20,4 +20,5 @@ class UserOverride extends Model
     public static string $uidPrefix = 'usr';
     public static int $uidLength = 10;
     public static bool $uidCheck = false;
+    public static string $uidPrefixSeparator = '=';
 }
