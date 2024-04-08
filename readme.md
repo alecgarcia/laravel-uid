@@ -55,7 +55,7 @@ php artisan make:migration --table users add-uid-to-users
     }
 ```
 
-#### With aa new Model
+#### With a new Model
 1. Open up the migration file for the model and add a `uid` field
    1. If you overrode the column name in either the config for the default or in your model, make sure you create the column in your table to match.
 
